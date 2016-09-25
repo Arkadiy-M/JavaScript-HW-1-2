@@ -1,18 +1,24 @@
-var x = +prompt ('Укажите число');
-console.log ("x=", x)
-var n = +prompt ('В какую степень');
-console.log ("n=", n)
-
-function pow(a,n) {
-  
-var result = 1;
-
-for (var i=0; i<n; i++){
-	result=result * a;
+function IsNumeric(input)
+{
+    return (input - 0) == input && (''+input).trim().length > 0;
 }
-
-	return result;
+function pow (a,b) {
+var result=1;
+	for (var i = 1; i <= b; i++){
+		result *= a;
+	}
+	console.log ('Результат POW:', result);
 }
-	var powResult = pow(x,n);
+alert ('Первая часть ДЗ 1-2');
+var num, exp;
+console.log(IsNumeric(12));
+do{
+	num = prompt ('Введите число:');
+}
+while(!IsNumeric(num));
 	
-	console.log(powResult);
+do{
+	exp = prompt ('В какую степень:');
+}
+while(!IsNumeric(num));
+pow (num, exp);
